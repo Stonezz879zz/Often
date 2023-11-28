@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{3798ecc2-0d48-4122-9df1-6dfcecb2c61f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\MainFrame">
+      <UniqueIdentifier>{ec913821-6d0d-4417-a0d5-32fc7ada9646}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CPUUsage">
+      <UniqueIdentifier>{50e81421-b629-482c-865b-0f11641bbc08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{f848a432-2c48-4c03-9fbf-f94be0e03699}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Often.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Often.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainFrame.cpp">
+      <Filter>UI\MainFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="CPUUsage\CPUUsage.cpp">
+      <Filter>CPUUsage</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Common.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrame.h">
+      <Filter>UI\MainFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiHelper.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CPUUsage\CPUUsage.h">
+      <Filter>CPUUsage</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDefine.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

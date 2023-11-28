@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="400,100"  roundcorner="0,0" caption="0,0,0,100" bktrans="true">
+  <VerticalLayout name="root" bkcolor="#88FFFFFF">
+    <Label name="lbl_cpu_usage" textcolor="#FF00FFFF" />
+  </VerticalLayout>
+</Window>
