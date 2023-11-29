@@ -17,6 +17,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{f848a432-2c48-4c03-9fbf-f94be0e03699}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MemoryUsage">
+      <UniqueIdentifier>{f880c86b-52fb-4ec1-83da-19f48d53c102}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Often.rc">
@@ -33,25 +36,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainFrame.cpp">
-      <Filter>UI\MainFrame</Filter>
-    </ClCompile>
     <ClCompile Include="CPUUsage\CPUUsage.cpp">
       <Filter>CPUUsage</Filter>
     </ClCompile>
     <ClCompile Include="Common\Common.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="UI\MainFrame.cpp">
+      <Filter>UI\MainFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ControlEx.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemoryUsage.cpp">
+      <Filter>MemoryUsage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
       <Filter>资源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="MainFrame.h">
-      <Filter>UI\MainFrame</Filter>
-    </ClInclude>
-    <ClInclude Include="DuiHelper.h">
-      <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="CPUUsage\CPUUsage.h">
       <Filter>CPUUsage</Filter>
@@ -61,6 +64,18 @@
     </ClInclude>
     <ClInclude Include="MessageDefine.h">
       <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\MainFrame.h">
+      <Filter>UI\MainFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\ControlEx.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\DuiHelper.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryUsage.h">
+      <Filter>MemoryUsage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

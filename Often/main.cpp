@@ -9,7 +9,8 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
-#include "MainFrame.h"
+#include<crtdbg.h>
+#include "UI/MainFrame.h"
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,

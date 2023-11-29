@@ -137,18 +137,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CMemoryUsage.h" />
     <ClInclude Include="Common\Common.h" />
     <ClInclude Include="CPUUsage\CPUUsage.h" />
-    <ClInclude Include="DuiHelper.h" />
-    <ClInclude Include="MainFrame.h" />
     <ClInclude Include="MessageDefine.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="UI\ControlEx.h" />
+    <ClInclude Include="UI\DuiHelper.h" />
+    <ClInclude Include="UI\MainFrame.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CMemoryUsage.cpp" />
     <ClCompile Include="Common\Common.cpp" />
     <ClCompile Include="CPUUsage\CPUUsage.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="UI\ControlEx.cpp" />
+    <ClCompile Include="UI\MainFrame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Often.rc" />
