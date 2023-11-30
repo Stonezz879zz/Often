@@ -20,6 +20,9 @@
     <Filter Include="MemoryUsage">
       <UniqueIdentifier>{f880c86b-52fb-4ec1-83da-19f48d53c102}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI\CCircleProgressUI">
+      <UniqueIdentifier>{72c66793-706d-44a6-8565-626d49eacd76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Often.rc">
@@ -45,11 +48,11 @@
     <ClCompile Include="UI\MainFrame.cpp">
       <Filter>UI\MainFrame</Filter>
     </ClCompile>
-    <ClCompile Include="UI\ControlEx.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
     <ClCompile Include="CMemoryUsage.cpp">
       <Filter>MemoryUsage</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\CCircleProgressUI.cpp">
+      <Filter>UI\CCircleProgressUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,14 +71,14 @@
     <ClInclude Include="UI\MainFrame.h">
       <Filter>UI\MainFrame</Filter>
     </ClInclude>
-    <ClInclude Include="UI\ControlEx.h">
-      <Filter>UI</Filter>
-    </ClInclude>
     <ClInclude Include="UI\DuiHelper.h">
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="CMemoryUsage.h">
       <Filter>MemoryUsage</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\CCircleProgressUI.h">
+      <Filter>UI\CCircleProgressUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 //#include "StdAfx.h"
-#include "ControlEx.h"
+#include "CCircleProgressUI.h"
 
 
 IMPLEMENT_DUICONTROL(CCircleProgressUI)
