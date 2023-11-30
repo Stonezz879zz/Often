@@ -22,7 +22,7 @@ private:
     void MonitorThreadCallback();
 private:
     // Control
-    CLabelUI* m_lbl_cpu_usage;
+    CLabelUI* m_lbl_memory_usage;
     CLabelUI* m_lbl_cpu_freq;
     CLabelUI* m_lbl_cpu_temperature;
     CLabelUI* m_lbl_gpu_usage;

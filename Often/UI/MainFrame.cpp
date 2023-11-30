@@ -3,13 +3,28 @@
 #include "Common/Common.h"
 #include <thread>
 
+float m_fGpuUsage;
+float m_fGpuTemperature;
+
+float m_fHDDTemperature;
+float m_fMainboardTemperature;
 CMainFrame::CMainFrame()
-    : m_lbl_cpu_usage(nullptr),
-    m_circle_cpu_usage(nullptr),
+    :m_circle_cpu_usage(nullptr),
+    m_lbl_cpu_freq(nullptr),
+    m_lbl_cpu_temperature(nullptr),
+    m_lbl_gpu_usage(nullptr),
+    m_lbl_gpu_temperature(nullptr),
+    m_lbl_memory_usage(nullptr),
+    m_lbl_hdd_temperature(nullptr),
+    m_lbl_Mainboard_temperature(nullptr),
     m_iCpuUsage(0),
-    m_iMemoryUsage(0),
     m_fCpuFreq(0.0),
-    m_fCpuTemperature(0.0)
+    m_fCpuTemperature(0.0),
+    m_fGpuUsage(0.0),
+    m_fGpuTemperature(0.0),
+    m_iMemoryUsage(0),
+    m_fHDDTemperature(0.0),
+    m_fMainboardTemperature(0.0)
 {
 }
 
@@ -44,8 +59,7 @@ void CMainFrame::InitWindow()
 
     m_circle_cpu_usage->SetCenterColor(m_circle_cpu_usage->GetBkColor());
 
-    m_lbl_cpu_usage = static_cast<CLabelUI*>(m_pm.FindControl(_T("lbl_cpu_usage")));
-    if (!m_lbl_cpu_usage) return;
+    
 
     m_lbl_cpu_freq = static_cast<CLabelUI*>(m_pm.FindControl(_T("lbl_cpu_freq")));
     if (!m_lbl_cpu_freq) return;
@@ -55,10 +69,16 @@ void CMainFrame::InitWindow()
 
     m_lbl_gpu_usage = static_cast<CLabelUI*>(m_pm.FindControl(_T("lbl_gpu_usage")));
     if (!m_lbl_gpu_usage) return;
+
     m_lbl_gpu_temperature = static_cast<CLabelUI*>(m_pm.FindControl(_T("lbl_gpu_temperature")));
     if (!m_lbl_gpu_temperature) return;
+
+    m_lbl_memory_usage = static_cast<CLabelUI*>(m_pm.FindControl(_T("lbl_memory_usage")));
+    if (!m_lbl_memory_usage) return;
+
     m_lbl_hdd_temperature = static_cast<CLabelUI*>(m_pm.FindControl(_T("lbl_hdd_temperature")));
     if (!m_lbl_hdd_temperature) return;
+
     m_lbl_Mainboard_temperature = static_cast<CLabelUI*>(m_pm.FindControl(_T("lbl_Mainboard_temperature")));
     if (!m_lbl_Mainboard_temperature) return;
 
@@ -89,9 +109,6 @@ LRESULT CMainFrame::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
         m_circle_cpu_usage->SetValue((int)m_iCpuUsage);
         m_circle_cpu_usage->SetText(wszText);
 
-        wsprintf(wszText, L"Memory Usage: %d\%%", (int)m_iMemoryUsage );
-        m_lbl_cpu_usage->SetText(wszText);
-        
         sprintf(szText, "CPU Freq: %.2f", m_fCpuFreq);
         m_lbl_cpu_freq->SetText(CCommon::StrToUnicode(szText).c_str());
 
@@ -103,6 +120,9 @@ LRESULT CMainFrame::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 
         sprintf(szText, "GPU Temperature: %.2f", m_fGpuTemperature);
         m_lbl_gpu_temperature->SetText(CCommon::StrToUnicode(szText).c_str());
+
+        wsprintf(wszText, L"Memory Usage: %d\%%", (int)m_iMemoryUsage);
+        m_lbl_memory_usage->SetText(wszText);
 
         sprintf(szText, "HDD Temperature: %.2f", m_fHDDTemperature);
         m_lbl_hdd_temperature->SetText(CCommon::StrToUnicode(szText).c_str());
@@ -139,11 +159,19 @@ void CMainFrame::MonitorThreadCallback()
         m_pMonitor->GetHardwareInfo();
         // 获取CPU频率
         m_fCpuFreq = m_pMonitor->CpuFreq();
+        // 获取CPU温度
         m_fCpuTemperature = m_pMonitor->CpuTemperature();
+        // 获取GPU占用率
         m_fGpuUsage = m_pMonitor->GpuUsage();
+        // 获取GPU温度
         m_fGpuTemperature = m_pMonitor->GpuTemperature();
+        // 获取硬盘温度
         m_fHDDTemperature = m_pMonitor->HDDTemperature();
+        // 获取主板温度
         m_fMainboardTemperature = m_pMonitor->MainboardTemperature();
+        m_pMonitor->AllHDDUsage();
+        m_pMonitor->AllCpuTemperature();
+
     }
     SendMessage(WM_REFRESH_CPU_USAGE, 0, 0);
     SetTimer(GetHWND(), WM_TIMER_QUERY_CPU_USAGE, 1000, NULL);
