@@ -109,25 +109,25 @@ LRESULT CMainFrame::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
         m_circle_cpu_usage->SetValue((int)m_iCpuUsage);
         m_circle_cpu_usage->SetText(wszText);
 
-        sprintf(szText, "CPU Freq: %.2f", m_fCpuFreq);
+        sprintf(szText, "CPU Freq: %.2f GHz", m_fCpuFreq);
         m_lbl_cpu_freq->SetText(CCommon::StrToUnicode(szText).c_str());
 
-        sprintf(szText, "CPU Temperature: %.2f", m_fCpuTemperature);
+        sprintf(szText, "CPU Temperature: %.2f ¡æ", m_fCpuTemperature);
         m_lbl_cpu_temperature->SetText(CCommon::StrToUnicode(szText).c_str());
 
         sprintf(szText, "GPU Usage: %.2f", m_fGpuUsage);
         m_lbl_gpu_usage->SetText(CCommon::StrToUnicode(szText).c_str());
 
-        sprintf(szText, "GPU Temperature: %.2f", m_fGpuTemperature);
+        sprintf(szText, "GPU Temperature: %.2f ¡æ", m_fGpuTemperature);
         m_lbl_gpu_temperature->SetText(CCommon::StrToUnicode(szText).c_str());
 
         wsprintf(wszText, L"Memory Usage: %d\%%", (int)m_iMemoryUsage);
         m_lbl_memory_usage->SetText(wszText);
 
-        sprintf(szText, "HDD Temperature: %.2f", m_fHDDTemperature);
+        sprintf(szText, "HDD Temperature: %.2f ¡æ", m_fHDDTemperature);
         m_lbl_hdd_temperature->SetText(CCommon::StrToUnicode(szText).c_str());
 
-        sprintf(szText, "Mainboard Temperature: %.2f", m_fMainboardTemperature);
+        sprintf(szText, "Mainboard Temperature: %.2f ¡æ", m_fMainboardTemperature);
         m_lbl_Mainboard_temperature->SetText(CCommon::StrToUnicode(szText).c_str());
         
         break;
