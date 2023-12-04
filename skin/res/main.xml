@@ -1,6 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Window size="400,100"  roundcorner="0,0" caption="0,0,0,100" bktrans="true">
-  <VerticalLayout name="root" bkcolor="#88FFFFFF">
-    <Label name="lbl_cpu_usage" textcolor="#FF00FFFF" />
+<Window size="800,600" caption="0,0,0,40"  roundcorner="0,0" caption="0,0,0,100" bktrans="true">
+  <Font shared="true" id="0" name="宋体" size="13" default="true"/>
+  <Font shared="true" id="1" name="宋体" size="12" bold="false" underline="false"/>
+  <Font shared="true" id="2" name="宋体" size="16" bold="false"/>
+  <Font shared="true" id="3" name="宋体" size="18" bold="false"/>
+
+  <Style name="colortab_style" shared="true" value="textcolor=&quot;#FFAFADAD&quot; hottextcolor=&quot;#FFFFFFFF&quot;
+   selectedtextcolor=&quot;#FFFFFFFF&quot; textpadding=&quot;6,0,6,0&quot; bkcolor=&quot;#FFF0FFFF&quot; 
+   hotbkcolor=&quot;#FF87CEFA&quot; pushedbkcolor=&quot;#FF87CEEB&quot; selectedbkcolor=&quot;#FF87CEEB&quot;
+    group=&quot;tab_header&quot;"  />
+
+  <!-- <VerticalLayout name="root" bkcolor="#00FFFFFF">
+
+    <CircleProgress name="circle_cpu_usage" textcolor="#FF333333" valign="vcenter" mouse="false" height="100" width="100" bkcolor="#FFCCE5FF" forecolor="#FF0080FF" value="0" min="0" max="100" bordercolor="#FFCCE5FF" bordersize="2" borderround="100,100"/>
+    <Label name="lbl_cpu_freq" textcolor="#FF00FFFF" Font="2"/>
+    <Label name="lbl_cpu_temperature" textcolor="#FF00FFFF" Font="2"/>
+    <Label name="lbl_gpu_usage" textcolor="#FF00FFFF" Font="2"/>
+    <Label name="lbl_gpu_temperature" textcolor="#FF00FFFF" Font="2"/>
+    <Label name="lbl_memory_usage" textcolor="#FF00FFFF" Font="2"/>
+    <Label name="lbl_hdd_temperature" textcolor="#FF00FFFF" Font="2"/>
+    <Label name="lbl_Mainboard_temperature" textcolor="#FF00FFFF" Font="2"/>
+  </VerticalLayout> -->
+  <VerticalLayout name="root" bkcolor="#FFFFFFFF">
+    <HorizontalLayout height="40">
+
+    </HorizontalLayout>
+    <HorizontalLayout name="tab_header"  >
+      <VerticalLayout width="180" >
+        <Control />
+        <Option height="48" text="硬件信息" name="hardware_tab" style="colortab_style" selected="true" />
+        <Option height="48" text="聊天室" name="chat_tab" style="colortab_style" />
+        <Option height="48" text="音乐" name="music_tab" style="colortab_style" />
+        <Option height="48" text="视频" name="video_tab" style="colortab_style" />
+        <Option height="48" text="小程序" name="app_tab" style="colortab_style" />
+        <Control />
+      </VerticalLayout>
+      <AnimationTabLayout name="tab_switch" animation_direction="vertical">
+        <VerticalLayout name="hardware_tab_panel" >
+          <CircleProgress name="circle_cpu_usage" textcolor="#FF333333" valign="vcenter" mouse="false" height="100" width="100" bkcolor="#FFCCE5FF" forecolor="#FF0080FF" value="0" min="0" max="100" bordercolor="#FFCCE5FF" bordersize="2" borderround="100,100"/>
+          <Label name="lbl_cpu_freq" textcolor="#FF00FFFF" Font="2"/>
+          <Label name="lbl_cpu_temperature" textcolor="#FF00FFFF" Font="2"/>
+          <Label name="lbl_gpu_usage" textcolor="#FF00FFFF" Font="2"/>
+          <Label name="lbl_gpu_temperature" textcolor="#FF00FFFF" Font="2"/>
+          <Label name="lbl_memory_usage" textcolor="#FF00FFFF" Font="2"/>
+          <Label name="lbl_hdd_temperature" textcolor="#FF00FFFF" Font="2"/>
+          <Label name="lbl_Mainboard_temperature" textcolor="#FF00FFFF" Font="2"/>
+        </VerticalLayout>
+        <VerticalLayout name="chat_tab_panel">
+          <Label text="chat_tab_panel" textcolor="#FF00FFFF" Font="2"/>
+        </VerticalLayout>
+        <VerticalLayout name="music_tab_panel">
+          <Label text="music_tab_panel" textcolor="#FF00FFFF" Font="2"/>
+        </VerticalLayout >
+        <VerticalLayout name="video_tab_panel">
+          <Label text="video_tab_panel" textcolor="#FF00FFFF" Font="2"/>
+        </VerticalLayout>
+        <VerticalLayout name="app_tab_panel"> 
+          <Label text="app_tab_panel" textcolor="#FF00FFFF" Font="2"/>
+        </VerticalLayout>
+      </AnimationTabLayout>
+    </HorizontalLayout>
   </VerticalLayout>
+  
 </Window>
